@@ -19,18 +19,19 @@ export class HomePage {
   }
   showMap()
   {
-    const location = new google.maps.LatLng(51.507351,-0.127758); //localização em latitude e longitude 
-
+    const location = new google.maps.LatLng(-15.641111,-48.020833); //localização em latitude e longitude 
+    
     //opções de mapa
     const options = 
     {
       center: location,
       zoom: 10,
       streetViewControl: false,
-      mapTypeId: 'satellite' //tipo de mapa, satellite, roadmap, hybrid, terrain
+      mapTypeId: 'satellite' //tipo de mapa: satellite, roadmap, hybrid, terrain
     }
     
     const map = new google.maps.Map(this.mapRef.nativeElement,options)
+
     this.addMarker(location, map) //chamar marcação
   }
 
@@ -39,7 +40,7 @@ export class HomePage {
   {
     return new google.maps.Marker
     ({
-      position,
+      position:{lat: -15.699431,lng: -47.829742}, //posição da marcação em latitude e longitude
       map
     });
   }
